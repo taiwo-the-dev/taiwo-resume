@@ -15,7 +15,7 @@ export default function HeroSection() {
             </div>
             <div className="h-subtitle text-[13px] typing-subtitle">
               <p>JavaScript Software Developer.</p>
-              <p>Web Design, Backend & React Native Mobile Apps.</p>
+              <p>Frontend, Backend & Mobile Developer.</p>
               <p>Based in Ibadan, Nigeria.</p>
             </div>
             <span className="typed-subtitle text-[13px]" />

@@ -2,6 +2,7 @@ const SOCIAL_LINKS = [
   { href: 'https://www.linkedin.com/in/taiwo-john-a135441a7/', icon: 'ion-social-linkedin' },
   { href: 'https://github.com/taiwo-the-dev/', icon: 'ion-social-github' },
   { href: 'https://twitter.com/taiwo_the_dev', icon: 'ion-social-twitter' },
+  { href: 'https://wa.me/2348144518276', icon: 'ion-social-whatsapp' },
   { href: 'mailto:jtaiwo909@gmail.com', icon: 'ion-email' }
 ];
 
