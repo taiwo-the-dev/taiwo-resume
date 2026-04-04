@@ -21,18 +21,24 @@ const EXPERIENCE_ITEMS: ResumeItem[] = [
   }
 ];
 
-const EDUCATION_ITEMS: ResumeItem[] = [
+const EXPERIENCE_ITEMS2: ResumeItem[] = [
   {
-    date: 'Graduated 2025',
-    name: 'Bachelor in Industrial Technology',
+    date: 'February - July',
+    name: 'React Native Developer - Finaive',
     description:
-      'Federal University of Technology Minna, Niger State, Nigeria.'
+      'Built and shipped mobile app features with React Native, improved usability, and worked closely with product and design to deliver smooth user flows.'
   },
   {
-    date: '2026 - Present',
-    name: 'Java Development Course (In Progress)',
+    date: 'August - December',
+    name: 'Backend Developer (NestJS & AWS) - Reni AI',
     description:
-      'Currently expanding backend and software engineering depth with structured Java training.'
+      'Developed backend services using NestJS, built secure API endpoints, and used AWS services for deployment, storage, and production reliability.'
+  },
+  {
+    date: 'February - Present',
+    name: 'React Native Developer - Ditrop',
+    description:
+      'Currently building and maintaining React Native features, improving performance, and integrating mobile workflows with backend services.'
   }
 ];
 
@@ -64,7 +70,7 @@ export default function ResumeSection() {
       <div className="content relative">
         <div className="cols">
           <ResumeColumn title="Experience" items={EXPERIENCE_ITEMS} />
-          <ResumeColumn title="Education" items={EDUCATION_ITEMS} />
+          <ResumeColumn title="Experience" items={EXPERIENCE_ITEMS2} />
         </div>
       </div>
     </div>

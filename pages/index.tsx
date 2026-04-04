@@ -1,19 +1,32 @@
-import Head from 'next/head';
-import Footer from '../components/layout/Footer';
-import FrameLines from '../components/layout/FrameLines';
-import Header from '../components/layout/Header';
-import Preloader from '../components/layout/Preloader';
-import AboutSection from '../components/sections/AboutSection';
-import BlogSection from '../components/sections/BlogSection';
-import ClientsSection from '../components/sections/ClientsSection';
-import ContactsSection from '../components/sections/ContactsSection';
-import HeroSection from '../components/sections/HeroSection';
-import ResumeSection from '../components/sections/ResumeSection';
-import ServiceSection from '../components/sections/ServiceSection';
-import SkillsSectionGroup from '../components/sections/SkillsSectionGroup';
-import WorksSection from '../components/sections/WorksSection';
+import { useEffect, useState } from "react";
+import Head from "next/head";
+import Footer from "../components/layout/Footer";
+import FrameLines from "../components/layout/FrameLines";
+import Header from "../components/layout/Header";
+import Preloader from "../components/layout/Preloader";
+import AboutSection from "../components/sections/AboutSection";
+import BlogSection from "../components/sections/BlogSection";
+import ClientsSection from "../components/sections/ClientsSection";
+import ContactsSection from "../components/sections/ContactsSection";
+import HeroSection from "../components/sections/HeroSection";
+import ResumeSection from "../components/sections/ResumeSection";
+import ServiceSection from "../components/sections/ServiceSection";
+import SkillsSectionGroup from "../components/sections/SkillsSectionGroup";
+import WorksSection from "../components/sections/WorksSection";
 
 export default function Home() {
+  const [showPreloader, setShowPreloader] = useState(true);
+
+  useEffect(() => {
+    const timerId = window.setTimeout(() => {
+      setShowPreloader(false);
+    }, 1800);
+
+    return () => {
+      window.clearTimeout(timerId);
+    };
+  }, []);
+
   return (
     <>
       <Head>
@@ -27,7 +40,7 @@ export default function Home() {
           content="John Taiwo, JavaScript Developer, React Native, Node.js, Web Design, Backend Development, Tailwind CSS, MongoDB"
         />
       </Head>
-      <Preloader />
+      {showPreloader ? <Preloader /> : null}
 
       <div className="container">
         <Header />

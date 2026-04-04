@@ -17,36 +17,60 @@ $(function () {
 	$('.section.started').css({'height': height-60});
 	
 	/* Typed preload text */
-	$('.typed-load').typed({
-		stringsElement: $('.typing-load'),
-		loop: true
-	});
-	
-	/* Preloader */
-	$(window).load(function() {
-		$(".preloader .pre-inner").fadeOut(800, function(){
-			/* Preload hide */
-			$('.preloader').fadeOut();
-			$('body').addClass('loaded');
-			
-			/* Typed subtitle */
+	if($('.typed-load').length && $('.typing-load').length){
+		$('.typed-load').typed({
+			stringsElement: $('.typing-load'),
+			loop: true
+		});
+	}
+
+	var postload_effects_initialized = false;
+	function init_postload_effects() {
+		if(postload_effects_initialized){
+			return;
+		}
+		postload_effects_initialized = true;
+
+		/* Typed subtitle */
+		if($('.typed-subtitle').length && $('.typing-subtitle').length){
 			$('.typed-subtitle').typed({
 				stringsElement: $('.typing-subtitle'),
 				loop: true
 			});
-			
-			/* Typed breadcrumbs */
+		}
+		
+		/* Typed breadcrumbs */
+		if($('.typed-bread').length && $('.typing-bread').length){
 			$('.typed-bread').typed({
 				stringsElement: $('.typing-bread'),
 				showCursor: false
 			});
+		}
 
-			/* One Page Nav */
-			var url_hash = location.hash;
-			var sectionElem = $(url_hash);
-			if(url_hash.indexOf('#section-') == 0 && sectionElem.length){
-				$('body, html').animate({scrollTop: $(url_hash).offset().top - 70}, 400);
-			}
+		/* One Page Nav */
+		var url_hash = location.hash;
+		var sectionElem = $(url_hash);
+		if(url_hash.indexOf('#section-') == 0 && sectionElem.length){
+			$('body, html').animate({scrollTop: $(url_hash).offset().top - 70}, 400);
+		}
+	}
+
+	/* Start typed effects without waiting for full asset load */
+	setTimeout(init_postload_effects, 100);
+	
+	/* Preloader */
+	$(window).load(function() {
+		var preInner = $(".preloader .pre-inner");
+		if(!preInner.length){
+			$('body').addClass('loaded');
+			init_postload_effects();
+			return;
+		}
+		preInner.fadeOut(800, function(){
+			/* Preload hide */
+			$('.preloader').fadeOut();
+			$('body').addClass('loaded');
+			init_postload_effects();
 		});
 	});
 

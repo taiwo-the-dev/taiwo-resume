@@ -45,13 +45,6 @@ body {
 body header,
 body footer,
 body .section {
-	opacity: 0;
-	visibility: hidden;
-}
-
-body.loaded header,
-body.loaded footer,
-body.loaded .section {
 	opacity: 1;
 	visibility: visible;
 }
@@ -799,4 +792,3 @@ blockquote {
 	}
 
 }
-
