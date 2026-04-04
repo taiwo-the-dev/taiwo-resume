@@ -1,36 +1,42 @@
-import SectionTitle from '../ui/SectionTitle';
+import SectionTitle from "../ui/SectionTitle";
 
 const SERVICES = [
   {
-    icon: 'ion-social-html5',
-    name: 'Web Design',
-    description: 'Design-to-code delivery with clean, responsive, and production-ready UI.'
+    icon: "ion-laptop",
+    name: "Frontend Development",
+    description:
+      "I build responsive, production-ready interfaces from Figma and product requirements.",
   },
   {
-    icon: 'ion-code',
-    name: 'Backend Development',
-    description: 'Node.js API development, integration logic, and maintainable service architecture.'
+    icon: "ion-code-working",
+    name: "Backend API Development",
+    description:
+      "I develop secure, scalable APIs with clean architecture and integration-ready endpoints.",
   },
   {
-    icon: 'ion-ipad',
-    name: 'React Native Apps',
-    description: 'Cross-platform mobile app experiences with reusable components and smooth UX.'
+    icon: "ion-ipad",
+    name: "Mobile App Development",
+    description:
+      "I ship cross-platform app features with smooth UX, reusable components, and solid performance.",
   },
   {
-    icon: 'ion-social-javascript',
-    name: 'JavaScript Engineering',
-    description: 'Feature implementation across frontend and backend with strong JS foundations.'
+    icon: "ion-monitor",
+    name: "CMS Development",
+    description:
+      "I build and maintain WordPress and Shopify sites with reliable e-commerce functionality.",
   },
   {
-    icon: 'ion-monitor',
-    name: 'CMS Development',
-    description: 'WordPress and Shopify builds, debugging, and e-commerce setup support.'
+    icon: "ion-social-javascript",
+    name: "JavaScript Solutions",
+    description:
+      "I deliver end-to-end web and mobile products using modern JavaScript across the stack.",
   },
   {
-    icon: 'ion-university',
-    name: 'Java Upskilling',
-    description: 'Actively building Java knowledge to strengthen backend and software depth.'
-  }
+    icon: "ion-wrench",
+    name: "Maintenance & Bug Fixing",
+    description:
+      "I improve existing apps through debugging, performance tuning, and practical feature upgrades.",
+  },
 ];
 
 export default function ServiceSection() {
@@ -40,12 +46,17 @@ export default function ServiceSection() {
         <SectionTitle title="Services" className="mb-0" />
         <div className="service-items">
           {SERVICES.map((item) => (
-            <div key={item.name} className="service-item inline-block align-top w-[28%] mt-[50px] mr-[4%] mb-0 ml-0">
-              <div className="icon float-left w-[36px] text-center text-[30px] text-extra-color">
-                <span className={`ion ${item.icon} block`} />
-              </div>
-              <div className="name font-medium text-[13px] text-[#141414] mt-[6px] mr-0 mb-0 ml-[46px]">
-                {item.name}
+            <div
+              key={item.name}
+              className="service-item inline-block align-top w-[28%] mt-[50px] mr-[4%] mb-0 ml-0"
+            >
+              <div className="flex items-center">
+                <div className="icon w-[36px] h-[36px] text-center text-[30px] text-extra-color leading-[36px] shrink-0">
+                  <span className={`ion ${item.icon} block leading-[36px]`} />
+                </div>
+                <div className="name font-medium text-[13px] text-[#141414] mt-0 mr-0 mb-0 ml-[10px]">
+                  {item.name}
+                </div>
               </div>
               <p className="!mb-0">{item.description}</p>
             </div>
