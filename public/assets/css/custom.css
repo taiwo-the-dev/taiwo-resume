@@ -338,6 +338,16 @@ header .head-top .top-menu {
   }
 }
 
+/* Keep About section text left-aligned across all breakpoints */
+.section.about,
+.section.about .content .title,
+.section.about .desc,
+.section.about .desc p,
+.section.about .info-list,
+.section.about .info-list ul li {
+  text-align: left !important;
+}
+
 /* Knowledge section layout */
 .skills.list .knowledge-item {
   width: 33.333333%;
