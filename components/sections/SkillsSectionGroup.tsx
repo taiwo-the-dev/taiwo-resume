@@ -22,21 +22,34 @@ const CODING_SKILLS = [
 ];
 
 const KNOWLEDGE_ITEMS = [
+  "JavaScript (ES6+)",
+  "TypeScript",
   "React.js",
-  "Redux",
-  "Node.js",
-  "MongoDB",
-  "React Native",
+  "Next.js",
+  "Redux Toolkit",
   "Tailwind CSS",
-  "Chakra UI & Material UI",
-  "WordPress & Shopify",
+  "HTML5 & CSS3",
+  "Node.js",
+  "NestJS",
+  "Express.js",
+  "REST APIs",
+  "React Native",
+  "Expo",
+  "MongoDB",
+  "AWS (EC2/S3)",
+  "Java (Core)",
+  "Spring Boot",
+  "Spring Data JPA",
+  "Hibernate ORM",
+  "MySQL / PostgreSQL",
+  "Git & GitHub",
 ];
 
 function DesignSkillsSection() {
   return (
     <div className="section skills relative z-[97] px-[80px] pt-0 pb-[150px] opacity-100 visible">
       <div className="content relative">
-        <SectionTitle title="Core Areas" />
+        <SectionTitle title="Core Focus Areas" />
         <div className="skills">
           <ul className="m-0 p-0 list-none">
             {DESIGN_SKILLS.map((item, index) => (
@@ -142,7 +155,7 @@ function KnowledgeSkillsSection() {
             {KNOWLEDGE_ITEMS.map((item) => (
               <li
                 key={item}
-                className="relative pt-0 pb-[10px] px-[30px] inline-block align-top w-1/2"
+                className="knowledge-item relative pt-0 pb-[10px] px-[30px] inline-block align-top"
               >
                 <div className="name pl-[23px] relative text-[13px] font-normal mt-0 mx-0 mb-[9px] text-[#363636]">
                   {item}

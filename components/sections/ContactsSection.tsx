@@ -36,6 +36,9 @@ export default function ContactsSection() {
           <div className="alert-success">
             <p>Thanks, your message is sent successfully. We will contact you shortly!</p>
           </div>
+          <div className="alert-error">
+            <p />
+          </div>
         </div>
       </div>
     </div>

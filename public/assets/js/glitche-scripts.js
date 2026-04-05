@@ -143,20 +143,36 @@ $(function () {
 		},
 		success: "valid",
 		submitHandler: function() {
+			var errorBox = $('.section.contacts .alert-error');
+			var errorText = $('.section.contacts .alert-error p');
 			$.ajax({
-				url: 'mailer/feedback.php',
+				url: '/api/contact',
 				type: 'post',
 				dataType: 'json',
 				data: 'name='+ $("#cform").find('input[name="name"]').val() + '&email='+ $("#cform").find('input[name="email"]').val() + '&message=' + $("#cform").find('textarea[name="message"]').val(),
 				beforeSend: function() {
-				
+					errorBox.hide();
+					errorText.text('');
 				},
 				complete: function() {
 				
 				},
 				success: function(data) {
-					$('#cform').fadeOut();
-					$('.alert-success').delay(1000).fadeIn();
+					if(data && data.success){
+						$('#cform').fadeOut();
+						$('.alert-success').delay(1000).fadeIn();
+					} else {
+						errorText.text((data && data.message) ? data.message : 'Message not sent. Please try again.');
+						errorBox.fadeIn();
+					}
+				},
+				error: function(xhr) {
+					var errorMessage = 'Message not sent. Please try again in a moment.';
+					if(xhr && xhr.responseJSON && xhr.responseJSON.message){
+						errorMessage = xhr.responseJSON.message;
+					}
+					errorText.text(errorMessage);
+					errorBox.fadeIn();
 				}
 			});
 		}

@@ -20,7 +20,7 @@ const EXPERIENCE_ITEMS: ResumeItem[] = [
       "Converted UI/UX designs into production sites, built WordPress and Shopify websites, created ecommerce experiences, and handled troubleshooting and maintenance.",
   },
   {
-    date: "February - July",
+    date: "February 2025 - July 2025",
     name: "React Native Developer - Finaive",
     description:
       "Built and shipped mobile app features with React Native, improved usability, and worked closely with product and design to deliver smooth user flows.",
@@ -29,13 +29,13 @@ const EXPERIENCE_ITEMS: ResumeItem[] = [
 
 const EXPERIENCE_ITEMS2: ResumeItem[] = [
   {
-    date: "August - December",
+    date: "August 2025 - December 2025",
     name: "Backend Developer (NestJS & AWS) - Reni AI",
     description:
       "Developed backend services using NestJS, built secure API endpoints, and used AWS services for deployment, storage, and production reliability.",
   },
   {
-    date: "February - Present",
+    date: "February 2026 - Present",
     name: "React Native Developer - Ditrop",
     description:
       "Currently building and maintaining React Native features, improving performance, and integrating mobile workflows with backend services.",

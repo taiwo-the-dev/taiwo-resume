@@ -197,6 +197,14 @@ footer .soc a:hover .ion {
   margin: 60px 0 30px 0;
   font-size: 15px;
 }
+.section.contacts .alert-error {
+  display: none;
+}
+.section.contacts .alert-error p {
+  margin: 18px 0 0 0;
+  font-size: 13px;
+  color: #d64b4b;
+}
 
 /* Navbar Brand Logo */
 header .head-top {
@@ -327,6 +335,24 @@ header .head-top .top-menu {
 @media (max-width: 480px) {
   .section.started .started-content .h-title {
     font-size: 34px !important;
+  }
+}
+
+/* Knowledge section layout */
+.skills.list .knowledge-item {
+  width: 33.333333%;
+}
+
+@media (max-width: 840px) {
+  .skills.list .knowledge-item {
+    width: 50% !important;
+  }
+}
+
+@media (max-width: 580px) {
+  .skills.list .knowledge-item {
+    width: 100% !important;
+    display: block !important;
   }
 }
 
