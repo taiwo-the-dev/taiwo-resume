@@ -364,6 +364,10 @@ header .head-top .top-menu {
     width: 100% !important;
     display: block !important;
   }
+
+  .section.skills .progress .percentage .percent {
+    display: none !important;
+  }
 }
 
 /* Professional navbar for tablet/mobile while preserving desktop */
