@@ -60,18 +60,9 @@ $(function () {
 	
 	/* Preloader */
 	$(window).load(function() {
-		var preInner = $(".preloader .pre-inner");
-		if(!preInner.length){
-			$('body').addClass('loaded');
-			init_postload_effects();
-			return;
-		}
-		preInner.fadeOut(800, function(){
-			/* Preload hide */
-			$('.preloader').fadeOut();
-			$('body').addClass('loaded');
-			init_postload_effects();
-		});
+		/* React controls the preloader visibility; this script only marks page loaded */
+		$('body').addClass('loaded');
+		init_postload_effects();
 	});
 
 	if(jQuery('.anchor_nav').length){

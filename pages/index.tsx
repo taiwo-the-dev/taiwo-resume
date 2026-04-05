@@ -16,12 +16,42 @@ export default function Home() {
   const [showPreloader, setShowPreloader] = useState(true);
 
   useEffect(() => {
-    const timerId = window.setTimeout(() => {
-      setShowPreloader(false);
-    }, 1800);
+    let isMounted = true;
+    const fallbackTimerId = window.setTimeout(() => {
+      if (isMounted) {
+        setShowPreloader(false);
+      }
+    }, 12000);
+
+    const waitForWindowLoad = new Promise<void>((resolve) => {
+      if (document.readyState === "complete") {
+        resolve();
+        return;
+      }
+
+      const onLoad = () => {
+        window.removeEventListener("load", onLoad);
+        resolve();
+      };
+
+      window.addEventListener("load", onLoad);
+    });
+
+    const waitForFonts = document.fonts?.ready
+      ? document.fonts.ready.then(() => undefined).catch(() => undefined)
+      : Promise.resolve();
+
+    Promise.all([waitForWindowLoad, waitForFonts]).then(() => {
+      window.setTimeout(() => {
+        if (!isMounted) return;
+        window.clearTimeout(fallbackTimerId);
+        setShowPreloader(false);
+      }, 150);
+    });
 
     return () => {
-      window.clearTimeout(timerId);
+      isMounted = false;
+      window.clearTimeout(fallbackTimerId);
     };
   }, []);
 
