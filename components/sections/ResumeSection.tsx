@@ -8,12 +8,6 @@ type ResumeItem = {
 
 const EXPERIENCE_ITEMS: ResumeItem[] = [
   {
-    date: "September 2020 - October 2021",
-    name: "Web Development Intern - SQI Academy ICT",
-    description:
-      "Converted mock designs into code, translated Figma designs into CSS, and developed web applications with engaging user interfaces.",
-  },
-  {
     date: "October 2021 - November 2022",
     name: "Web Designer - Regnant Digital",
     description:
